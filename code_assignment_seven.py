@@ -1,3 +1,13 @@
+"""The file Numbers.txt  Download Numbers.txtcontains the integers 6, 9, 2, 3, 6, 4 with each integer on a separate line.
+Write a program that uses the file to carry out the task without using lists.
+34. Display the number of numbers in the file Numbers.txt. 
+35. Display the largest number in the file Numbers.txt.
+36. Display the smallest number in the file Numbers.txt
+
+Andrew Webster
+03/28/2023
+CSIS 1300-02"""
+
 # Open the file for reading
 rfile = open("numbers.txt", "r")
 
@@ -35,8 +45,20 @@ while data:
 # Close the file
 rfile.close()
 
+# Calculate the average (CREATIVE ELEMENT)
+avg = runsum / len(numbers)
+
+# Calculate the median (CREATIVE ELEMENT)
+n = len(numbers)
+if n % 2 == 0:
+    median = (numbers[n//2 - 1] + numbers[n//2]) / 2
+else:
+    median = numbers[n//2]
+
 # Print the results
 print("Input Numbers:", numbers)
 print("Max value:", maxvalue)
 print("Min value:", minvalue)
 print("Sum of values:", runsum)
+print("Average of values:", avg)
+print("Median of values:", median)
